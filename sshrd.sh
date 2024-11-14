@@ -124,12 +124,9 @@ if [ "$1" = 'reset' ]; then
         exit
     fi
 
-    if [ "$check" = '0x8960' ]; then
-        "$oscheck"/ipwnder > /dev/null
-    else
-        "$oscheck"/gaster pwn > /dev/null
-    fi
-    "$oscheck"/gaster reset > /dev/null
+    echo "Please pwn your device..."
+    read
+    
     "$oscheck"/irecovery -f sshramdisk/iBSS.img4
     sleep 2
     "$oscheck"/irecovery -f sshramdisk/iBEC.img4
@@ -167,12 +164,9 @@ if [ "$1" = 'boot' ]; then
     minor=${minor:-0}
     patch=${patch:-0}
     
-    if [ "$check" = '0x8960' ]; then
-        "$oscheck"/ipwnder > /dev/null
-    else
-        "$oscheck"/gaster pwn > /dev/null
-    fi
-    "$oscheck"/gaster reset > /dev/null
+    echo "Please pwn your device..."
+    read
+
     "$oscheck"/irecovery -f sshramdisk/iBSS.img4
     sleep 2
     "$oscheck"/irecovery -f sshramdisk/iBEC.img4
