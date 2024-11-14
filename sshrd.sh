@@ -169,6 +169,10 @@ if [ "$1" = 'boot' ]; then
 
     "$oscheck"/irecovery -f sshramdisk/iBSS.img4
     sleep 2
+    if [ "$check" = '0x8960' ]; then
+        "$oscheck"/irecovery -f sshramdisk/iBSS.img4
+        sleep 2
+    fi
     "$oscheck"/irecovery -f sshramdisk/iBEC.img4
 
     if [ "$check" = '0x8010' ] || [ "$check" = '0x8015' ] || [ "$check" = '0x8011' ] || [ "$check" = '0x8012' ]; then
