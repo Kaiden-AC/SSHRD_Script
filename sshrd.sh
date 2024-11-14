@@ -203,7 +203,9 @@ if [ ! -e work ]; then
     mkdir work
 fi
 
-"$oscheck"/gaster pwn > /dev/null
+echo "Please pwn your device..."
+read
+
 "$oscheck"/img4tool -e -s other/shsh/"${check}".shsh -m work/IM4M
 
 cd work
